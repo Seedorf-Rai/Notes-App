@@ -1,5 +1,8 @@
 import '../css/sidebar.css';
 import HomeContent from './HomeContent';
+import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome'
+import { faHouse , faBolt } from '@fortawesome/free-solid-svg-icons'
+import { faBell , faNoteSticky ,faCircleCheck   } from '@fortawesome/free-regular-svg-icons'
 
 export default function Sidebar(){
     return(
@@ -11,19 +14,24 @@ export default function Sidebar(){
                     <input type="text" placeholder='Search' />
                  </div>
                  <div className="nav-item">
+                 <FontAwesomeIcon icon={faHouse} />
                    <h2>Home</h2>
                  </div>
                  <div className="nav-item">
-                   <h2>Home</h2>
+                 <FontAwesomeIcon icon={faBell} />
+                   <h2>Notification</h2>
                  </div>
                  <div className="nav-item">
-                   <h2>Home</h2>
+                 <FontAwesomeIcon icon={faNoteSticky} />
+                   <h2>Notes</h2>
                  </div>
                  <div className="nav-item">
-                   <h2>Home</h2>
+                 <FontAwesomeIcon icon={faCircleCheck} />
+                   <h2>Tasks</h2>
                  </div>
                  <div className="nav-item">
-                   <h2>Home</h2>
+                 <FontAwesomeIcon icon={faBolt} />
+                   <h2>Tips</h2>
                  </div>
                </div>
                <div>
