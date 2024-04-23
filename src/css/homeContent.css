@@ -1,0 +1,27 @@
+
+/*  */
+.hello-box{
+    width: 78vw;
+    height: 30vh;
+    background-image: url('../../public/bg.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 65% 66%;
+}
+.home-content{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    padding-top: 30px;
+}
+.card{
+    height: 200px;
+    width: 300px;
+    background-color:red;
+}
+.card-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}

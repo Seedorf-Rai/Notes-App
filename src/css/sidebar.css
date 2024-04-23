@@ -1,0 +1,17 @@
+.main-box{
+
+    width: 100vw;
+    display: flex;
+}
+.aside-box{
+    position: fixed;
+    width: 22%;
+    background-color: #014D42;
+    height: 100vh;
+}
+.content{
+    margin-left: 21.7%;
+    background-color: #F9F7E9;
+    height: auto;
+}
+
