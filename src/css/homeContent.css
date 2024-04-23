@@ -7,6 +7,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: 65% 66%;
+    position: relative;
 }
 .home-content{
     display: flex;
@@ -28,4 +29,18 @@
 .icon{
     font-size: 30px;
     color: orange;
+}
+.abait{
+    font-size: 35px;
+    font-weight: 700;
+    color: white;
+}
+.abait-time{
+    font-size: 17px;
+    color: white;
+}
+.abait-box{
+    position: absolute;
+    right: 4%;
+    bottom: 8%;
 }

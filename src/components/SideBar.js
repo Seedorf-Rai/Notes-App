@@ -9,7 +9,7 @@ export default function Sidebar(){
       <>
         <div className="main-box">
            <div className="aside-box">
-            <h1 style={{ fontSize: '40px', fontWeight: 'bold' }}> <span style={{ color: '#D9F57A' }}>N</span><span style={{ color: 'white' }}>otes</span></h1>
+            <h1 style={{ fontSize: '40px', fontWeight: 'bold' , marginLeft: '20px' }}> <span style={{ color: '#D9F57A' }}>N</span><span style={{ color: 'white' }}>otes</span></h1>
                <div className="nav">
                  <div className="nav-item">
                     <input type="text" className='search-box' placeholder='Search' />
