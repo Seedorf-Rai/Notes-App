@@ -9,36 +9,47 @@ export default function Sidebar(){
       <>
         <div className="main-box">
            <div className="aside-box">
+            <h1 style={{ fontSize: '40px', fontWeight: 'bold' }}> <span style={{ color: '#D9F57A' }}>N</span><span style={{ color: 'white' }}>otes</span></h1>
                <div className="nav">
                  <div className="nav-item">
-                    <input type="text" placeholder='Search' />
+                    <input type="text" className='search-box' placeholder='Search' />
                  </div>
                  <div className="nav-item">
-                 <FontAwesomeIcon icon={faHouse} />
+                    <div className="icon-text">
+                    <FontAwesomeIcon className="icon-sidebar" icon={faHouse} />
                    <h2>Home</h2>
+                    </div>
                  </div>
                  <div className="nav-item">
-                 <FontAwesomeIcon icon={faBell} />
+                 <div className="icon-text">
+                 <FontAwesomeIcon className="icon-sidebar" icon={faBell} />
                    <h2>Notification</h2>
                  </div>
+                 </div>
                  <div className="nav-item">
-                 <FontAwesomeIcon icon={faNoteSticky} />
+                 <div className="icon-text">
+                 <FontAwesomeIcon className="icon-sidebar" icon={faNoteSticky} />
                    <h2>Notes</h2>
                  </div>
-                 <div className="nav-item">
-                 <FontAwesomeIcon icon={faCircleCheck} />
-                   <h2>Tasks</h2>
                  </div>
                  <div className="nav-item">
-                 <FontAwesomeIcon icon={faBolt} />
+                  <div className="icon-text">
+                  <FontAwesomeIcon className="icon-sidebar" icon={faCircleCheck} />
+                   <h2>Tasks</h2>
+                  </div>
+                 </div>
+                 <div className="nav-item">
+                    <div className="icon-text">
+                    <FontAwesomeIcon className="icon-sidebar" icon={faBolt} />
                    <h2>Tips</h2>
+                    </div>
                  </div>
                </div>
                <div>
                   <div className="user">
                     <div className="flex">
-                        <img width={50} height={50} src="https://assets.materialup.com/uploads/88067173-c945-4743-9476-11788fd27230/preview.png" alt="" />
-                       <h3>User Name</h3>
+                        <img className='profile-img' src="https://images.pexels.com/photos/20517291/pexels-photo-20517291/free-photo-of-a-man-in-apron-holding-a-cup-of-coffee.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                        <h1 className='name'>Seedorf Rai</h1>
                     </div>
                   </div>
                </div>
