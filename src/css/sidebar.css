@@ -55,6 +55,13 @@
     align-items: center;
 
 }
+.search-item{
+    margin: 20px 0;
+    height: 40px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+}
 .nav-item:hover{
     cursor: pointer;
     background-color: #013A32;

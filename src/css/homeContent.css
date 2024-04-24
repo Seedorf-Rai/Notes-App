@@ -17,14 +17,20 @@
     padding-top: 30px;
 }
 .card{
-    height: 200px;
+    height: auto;
     width: 300px;
-    background-color:red;
+    background-color:#D9F57A;
 }
+.fold {
+    background:
+      linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 2em 2em,
+      linear-gradient(-135deg, transparent 1.41em, #D9F57A 0);
+
+  }
 .card-section{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr  1fr;
+    gap: 30px;
 }
 .icon{
     font-size: 30px;
