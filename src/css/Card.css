@@ -66,3 +66,17 @@
     color: #4e5f38;
     font-weight: 600;
 }
+.dlt-btn{
+    padding: 2px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(255, 112, 84);
+    margin-left: 20px;
+}
+.editBtn{
+    padding: 2px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(34, 153, 245);
+    margin-left: 20px;
+}
