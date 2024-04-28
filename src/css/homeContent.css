@@ -49,3 +49,11 @@
     right: 4%;
     bottom: 8%;
 }
+.notes-text{
+    display: flex;
+    padding: 10px 30px;
+}
+.notes-text h1{
+    font-weight: 600;
+    margin-left: 10px;
+}

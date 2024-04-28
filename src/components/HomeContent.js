@@ -33,10 +33,10 @@ export default function HomeContent(){
              <p className='abait-time'>{day} , {month} , {getDay} , {year} </p>
              </div>
           </div>
-          <h5>
-              <FontAwesomeIcon icon={faNoteSticky} className='icon' />
-              Notes
-            </h5>
+          <div className="notes-text">
+          <FontAwesomeIcon icon={faNoteSticky} className='icon' />
+          <h1>My Notes</h1>
+          </div>
           <div className="home-content">
 
             <div className="card-section">
