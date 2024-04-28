@@ -1,6 +1,6 @@
 import '../css/Card.css';
 
-export default function Card() {
+export default function Card({date,title,description,tag}) {
   return (
     <>
       <div className="card-main-div">
@@ -8,7 +8,7 @@ export default function Card() {
 
           <div className="card-top">
             <div>
-              <h3>25 April , 2024</h3>
+              <h3>{date}</h3>
             </div>
             <div className="card-option">
               ...
@@ -17,23 +17,18 @@ export default function Card() {
           </div>
 
           <div className="card-title">
-            <h1>User interviews to improve your project design</h1>
+            <h1>{title}</h1>
           </div>
          <div className="card-desc">
            <p>
-             Lorem ipsum dolor sit amet .ecusandae quos? Repellat voluptatem consequatur pariatur enim, vero nesciunt!...
+             {description}
            </p>
          </div>
          <div className="card-tag">
            <div className="card-tag-div">
-             Workshop
+            {tag}
            </div>
-           <div className="card-tag-div">
-             Workshop
-           </div>
-           <div className="card-tag-div">
-             Workshop
-           </div>
+
          </div>
         </div>
         {/* <div className="card-option-box">

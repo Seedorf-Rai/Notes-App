@@ -1,8 +1,8 @@
 import '../css/homeContent.css'
 import Form from './Form'
-import Card from './Card'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNoteSticky } from '@fortawesome/free-regular-svg-icons'
+import CardList from './CardList'
 
 export default function HomeContent(){
   const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"]
@@ -40,14 +40,7 @@ export default function HomeContent(){
           <div className="home-content">
 
             <div className="card-section">
-             <Card></Card>
-             <Card></Card>
-             <Card></Card>
-
-             <Card></Card>
-             <Card></Card>
-             <Card></Card>
-             <Card></Card>
+              <CardList></CardList>
             </div>
             <div className="form-section">
                 <Form></Form>
