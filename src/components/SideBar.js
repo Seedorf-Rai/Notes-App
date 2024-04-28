@@ -3,8 +3,16 @@ import HomeContent from './HomeContent';
 import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome'
 import { faHouse , faBolt } from '@fortawesome/free-solid-svg-icons'
 import { faBell , faNoteSticky ,faCircleCheck   } from '@fortawesome/free-regular-svg-icons'
+import { useRef } from 'react';
 
 export default function Sidebar(){
+  const getSearch = useRef()
+  const handleFocus = ()=>{
+   if(getSearch.current){
+    getSearch.current.style.color = 'red'
+   }
+    console.log("Focused");
+  }
     return(
       <>
         <div className="main-box">
@@ -12,7 +20,7 @@ export default function Sidebar(){
             <h1 style={{ fontSize: '40px', fontWeight: 'bold' , marginLeft: '20px' }}> <span style={{ color: '#D9F57A' }}>N</span><span style={{ color: 'white' }}>otes</span></h1>
                <div className="nav">
                  <div className="search-item">
-                    <input type="text" className='search-box' placeholder='Search' />
+                    <input type="text" ref={getSearch} onFocus={handleFocus} className='search-box' placeholder='Search' />
                  </div>
                  <div className="nav-item">
                     <div className="icon-text">
