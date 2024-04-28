@@ -3,6 +3,7 @@ import Form from './Form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNoteSticky } from '@fortawesome/free-regular-svg-icons'
 import CardList from './CardList'
+import { useState } from 'react'
 
 export default function HomeContent(){
   const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"]
@@ -25,6 +26,13 @@ export default function HomeContent(){
   else{
     abait = "Good Night"
   }
+  const [Data,setData] = useState([])
+ function addCard(newCard){
+   setData([...Data,{
+    id: Data.length + 1,
+    ...newCard
+   }])
+ }
   return(
         <>
           <div className="hello-box">
@@ -40,10 +48,10 @@ export default function HomeContent(){
           <div className="home-content">
 
             <div className="card-section">
-              <CardList></CardList>
+              <CardList Data={Data}></CardList>
             </div>
             <div className="form-section">
-                <Form></Form>
+                <Form addCard={addCard}></Form>
             </div>
           </div>
         </>
