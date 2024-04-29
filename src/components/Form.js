@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../css/form.css'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons/faCirclePlus'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Form({addCard}){
+export default function Form({addCard,editableCard,updateCard}){
   const initialValue = {
     title:"",
     tag:"",
@@ -16,9 +16,20 @@ export default function Form({addCard}){
   }
   function handleSubmit(e){
      e.preventDefault();
+
+     if(editableCard){
+      updateCard(value)
+     }
+     else{
+      addCard(value);
+     }
      setValue(value=>initialValue)
-     addCard(value);
   }
+  useEffect(()=>{
+    if(editableCard){
+      setValue(editableCard)
+    }
+  },[editableCard])
     return(
         <>
           <div className="form-div">
@@ -37,7 +48,9 @@ export default function Form({addCard}){
               <option value="Maths">Maths</option>
             </select>
             <textarea type="text" onChange={handleChange} name='description'  placeholder="Enter Details" value={value.description} rows={8} />
-            <button className='button-87' onClick={handleSubmit} type="submit">Add New Notes</button>
+            <button className='button-87' onClick={handleSubmit} type="submit">{
+              editableCard ? "Update Note" : "Add New Notes"
+            }</button>
           </form>
           </div>
         </>

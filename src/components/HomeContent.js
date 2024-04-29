@@ -27,6 +27,7 @@ export default function HomeContent(){
     abait = "Good Night"
   }
   // Functionalities
+  const [editableCard,setEditableCard] = useState(null)
   const [Data,setData] = useState([])
  function addCard(newCard){
    setData([...Data,{
@@ -37,6 +38,26 @@ export default function HomeContent(){
  function deleteCard(id){
    const newCard = Data.filter((card) => card.id !== id)
    setData(newCard)
+ }
+ function editCard(id){
+   for(var i = 0; i < Data.length; i++){
+    if(Data[i].id === id){
+      setEditableCard(Data[i])
+    }
+   }
+ }
+ function updateCard(card){
+   console.log(card);
+   var temp;
+   for(var i = 0; i < Data.length ; i++){
+    if(Data[i].id === card.id){
+     temp = Data[i];
+    }
+   }
+   temp.title = card.title;
+   temp.description = card.description;
+   temp.tag = card.tag;
+   setEditableCard(null)
  }
   return(
         <>
@@ -53,10 +74,10 @@ export default function HomeContent(){
           <div className="home-content">
 
             <div className="card-section">
-              <CardList deleteCard={deleteCard} Data={Data}></CardList>
+              <CardList editCard={editCard} deleteCard={deleteCard} Data={Data}></CardList>
             </div>
             <div className="form-section">
-                <Form addCard={addCard}></Form>
+                <Form addCard={addCard} editableCard={editableCard} updateCard={updateCard} ></Form>
             </div>
           </div>
         </>

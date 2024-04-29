@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import '../css/Card.css';
 
-export default function Card({id,date,deleteCard,title,description,tag}) {
+export default function Card({id,date,deleteCard,editCard,title,description,tag}) {
  const [desc,setDesc] = useState(true)
   function handleDelete(){
     deleteCard(id)
   }
   function handleShow(){
     setDesc(!desc)
+  }
+  function handleEdit(){
+      editCard(id)
   }
   return (
     <>
@@ -30,7 +33,7 @@ export default function Card({id,date,deleteCard,title,description,tag}) {
          <div className="card-desc" onClick={handleShow}>
            <p>
              {
-              desc ? description.substring(0,30) + '...' : description
+              desc.length > 30 ? description.substring(0,30) + '...' : description
              }
            </p>
          </div>
@@ -38,7 +41,7 @@ export default function Card({id,date,deleteCard,title,description,tag}) {
            <div className="card-tag-div">
             {tag}
            </div>
-            <button className='editBtn'>Edit</button>
+            <button className='editBtn' onClick={handleEdit} >Edit</button>
             <button className='dlt-btn' onClick={handleDelete}>X</button>
          </div>
         </div>
