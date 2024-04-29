@@ -3,6 +3,7 @@
     padding-top: 4%;
     padding-left: 6%;
     padding-right: 5px;
+    height: auto;
 }
 .card-top{
     display: flex;
@@ -79,4 +80,7 @@
     color: white;
     background-color: rgb(34, 153, 245);
     margin-left: 20px;
+}
+.card-desc:hover{
+    cursor: pointer;
 }

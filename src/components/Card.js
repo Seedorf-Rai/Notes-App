@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import '../css/Card.css';
 
 export default function Card({id,date,deleteCard,title,description,tag}) {
-  if(description.length > 20){
-    description = description.substring(0,20) + '...';
-  }
+ const [desc,setDesc] = useState(true)
   function handleDelete(){
     deleteCard(id)
+  }
+  function handleShow(){
+    setDesc(!desc)
   }
   return (
     <>
@@ -25,9 +27,11 @@ export default function Card({id,date,deleteCard,title,description,tag}) {
           <div className="card-title">
             <h1>{title}</h1>
           </div>
-         <div className="card-desc">
+         <div className="card-desc" onClick={handleShow}>
            <p>
-             {description}
+             {
+              desc ? description.substring(0,30) + '...' : description
+             }
            </p>
          </div>
          <div className="card-tag">
