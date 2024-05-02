@@ -9,7 +9,8 @@ export default function Card({id,date,deleteCard,editCard,title,description,tag}
   function handleShow(){
     setDesc(!desc)
   }
-  function handleEdit(){
+  function handleEdit(e){
+      e.preventDefault()
       editCard(id)
   }
   return (
@@ -33,7 +34,7 @@ export default function Card({id,date,deleteCard,editCard,title,description,tag}
          <div className="card-desc" onClick={handleShow}>
            <p>
              {
-              desc.length > 30 ? description.substring(0,30) + '...' : description
+              desc ? description.substring(0,30) + '...' : description
              }
            </p>
          </div>
