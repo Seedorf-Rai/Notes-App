@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNoteSticky } from '@fortawesome/free-regular-svg-icons'
 import CardList from './CardList'
 import { useReducer, useState } from 'react'
+import NoteContext from '../context/NoteContext'
+import NoteDispatchContext from '../context/NoteDispatchContext'
 
 export default function HomeContent() {
   const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -60,7 +62,8 @@ export default function HomeContent() {
   // const [Data,setData] = useState([])
   const [Data, dispatch] = useReducer(dataReducer, [])
 
-  function addCard(newCard) {
+    // This was here but we used context directly to the form
+  // function addCard(newCard) {
     // Without reducer
     //  setData([...Data,{
     //   id: Data.length + 1,
@@ -68,25 +71,23 @@ export default function HomeContent() {
     //  }])
 
     // After reducer
-    dispatch(
-      {
-        type: "ADD",
-        payload: newCard
-      }
-    )
 
-  }
-  function deleteCard(id) {
+    // dispatch(
+    //   {
+    //     type: "ADD",
+    //     payload: newCard
+    //   }
+    // )
+
+  // }
+  // function deleteCard(id) {
     // Before Reducer
     //  const newCard = Data.filter((card) => card.id !== id)
     //  setData(newCard)
 
     // After Reducer
-    dispatch({
-      type: "DELETE",
-      payload: id
-    })
-  }
+
+  // }
   function editCard(id) {
      for(var i = 0; i < Data.length; i++){
       if(Data[i].id === id){
@@ -95,7 +96,7 @@ export default function HomeContent() {
      }
 
   }
-  function updateCard(card) {
+  // function updateCard(card) {
     //  console.log(card);
     //  var temp;
     //  for(var i = 0; i < Data.length ; i++){
@@ -107,13 +108,16 @@ export default function HomeContent() {
     //  temp.description = card.description;
     //  temp.tag = card.tag;
     //  setEditableCard(null)
-    dispatch({
-      type: "UPDATE",
-      payload: card
-    })
-  }
+    // dispatch({
+    //   type: "UPDATE",
+    //   payload: card
+    // })
+  // }
   return (
-    <>
+    <NoteContext.Provider value={Data} >
+        <NoteDispatchContext.Provider value={dispatch}>
+    <div>
+
       <div className="hello-box">
         <div className="abait-box">
           <h1 className='abait'>{abait} Seedorf</h1>
@@ -124,15 +128,23 @@ export default function HomeContent() {
         <FontAwesomeIcon icon={faNoteSticky} className='icon' />
         <h1>My Notes</h1>
       </div>
+
       <div className="home-content">
 
-        <div className="card-section">
-          <CardList editCard={editCard} deleteCard={deleteCard} Data={Data}></CardList>
+
+       <div className="card-section">
+          <CardList editCard={editCard}  ></CardList>
         </div>
         <div className="form-section">
-          <Form addCard={addCard} editableCard={editableCard} updateCard={updateCard} ></Form>
+          <Form  editableCard={editableCard}  ></Form>
         </div>
+
+
+
       </div>
-    </>
+    </div>
+    </NoteDispatchContext.Provider>
+    </NoteContext.Provider >
+
   )
 }

@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../css/form.css'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons/faCirclePlus'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import NoteDispatchContext from '../context/NoteDispatchContext';
 
-export default function Form({addCard,editableCard,updateCard}){
+export default function Form({editableCard}){
+  const dispatch = useContext(NoteDispatchContext)
   const initialValue = {
     title:"",
     tag:"",
@@ -18,10 +20,18 @@ export default function Form({addCard,editableCard,updateCard}){
      e.preventDefault();
 
      if(editableCard){
-      updateCard(value)
+      dispatch({
+        type: "UPDATE",
+        payload: value
+      })
      }
      else{
-      addCard(value);
+      dispatch(
+        {
+          type: "ADD",
+          payload: value
+        }
+      )
      }
      setValue(value=>initialValue)
   }

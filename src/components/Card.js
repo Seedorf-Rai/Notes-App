@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import '../css/Card.css';
+import NoteDispatchContext from '../context/NoteDispatchContext';
 
-export default function Card({id,date,deleteCard,editCard,title,description,tag}) {
+export default function Card({id,date,editCard,title,description,tag}) {
  const [desc,setDesc] = useState(true)
+ const dispatch = useContext(NoteDispatchContext)
   function handleDelete(){
-    deleteCard(id)
+    dispatch({
+      type: "DELETE",
+      payload: id
+    })
   }
   function handleShow(){
     setDesc(!desc)
